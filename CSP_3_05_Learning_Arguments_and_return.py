@@ -5,15 +5,13 @@
 #modify the below function such that it asks the user for 2 numbers as input.
 #Then have it print out the larger number
 def larger():
-    n1 = input("give me a number")
-    n2 = input("give me a number")
-    n1 = int(n1)
-    n2 = int(n2)
+    n1 = int(input("give me a number"))
+    n2 = int(input("give me a number"))
     if( n1 > n2):
-        print (n1)
+        return n1
     else:
-        print (n2)
-
+        return n2
+larger()
 #Modify the below function such that it asks for the users score as an input.
 #Then based on the score print out a letter grade.
 # 90+ A
@@ -24,46 +22,42 @@ def larger():
 def grade(g):
     g = input("Give me your grade")
     if( g>=90):
-        print ("A")
+        return "A"
     elif( g>= 80):
-        print ("B")
+        return "B"
     elif(g >= 70):
-        print ("C")
+        return "C"
     elif(g >= 60):
-        print ("D")
+        return "D"
     else:
-        print ("F")
+        return "F"
 
 #Modify the below function such that it asks the user for a number then
 #if the number is divisible by 3 print "fizz"
 #if the number is divisible by 5 print "buzz"
 #if both are the case then print "Fizzbuzz" instead of the prior two
 #if niether are the case print the number.
-def fizzBuzz():
-    n = input("Give me a number")
-    n = int(n)
+def fizzBuzz(n):
+
     if(n%5==0 and n%3==0):
-        print( "FizzBuzz")
+        return "FizzBuzz"
     elif(n%3==0):
-        print ("fizz")
+        return "fizz"
     elif(n%5==0):
-        print ("buzz")
+        return "buzz"
     else:
-        print(n)
+        return n
 
 #modify the below function such that it asks the user for an input number.
 #if the number is even divide it by two.
 #if the number is odd multiply it by 3 and add 1
 #then print the new number.
 def collatz():
-    n = input("Give me a number")
-    n = int(n)
-    if(n==1):
-        print (n)
+    n = int(input("Give me a number"))
     if(n%2==0):
-        print (n/2)
+        return (n/2)
     else:
-        print (3*n+1)
+        return 3*n+1
 
 
 
@@ -74,7 +68,7 @@ def collatz():
 #Then given the temperature if it is in Fahrenheit convert it to Celsius on vice versa
 #Example 32F -> 0C  20C -> 68F
 def convertTemperature(input):
-    #input = input("Give me a temperature")
+    input = input("Give me a temperature")
     if(input[len(input)-1]=="C"):
         input = int(input[0:len(input)-1])
         out = input*(9/5)+32
@@ -84,3 +78,4 @@ def convertTemperature(input):
         out = (input-32)*5/9
         print(str(int(out))+"C")
 
+print("fizzbuzz:", fizzBuzz(89))
