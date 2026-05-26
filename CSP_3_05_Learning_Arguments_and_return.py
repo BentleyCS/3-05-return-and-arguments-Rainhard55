@@ -4,14 +4,14 @@
 
 #modify the below function such that it asks the user for 2 numbers as input.
 #Then have it print out the larger number
-def larger():
-    n1 = int(input("give me a number"))
-    n2 = int(input("give me a number"))
-    if( n1 > n2):
+def larger(n1,n2):
+
+    if n1 > n2:
         return n1
     else:
         return n2
-larger()
+print(larger(10,20))
+pass
 #Modify the below function such that it asks for the users score as an input.
 #Then based on the score print out a letter grade.
 # 90+ A
@@ -20,17 +20,20 @@ larger()
 # 60+ D
 # 59- F
 def grade(g):
-    g = input("Give me your grade")
-    if( g>=90):
+    if g>=90:
         return "A"
-    elif( g>= 80):
+    elif g>= 80:
         return "B"
-    elif(g >= 70):
+    elif g >= 70:
         return "C"
-    elif(g >= 60):
+    elif g >= 60:
         return "D"
     else:
         return "F"
+
+print(grade(92))
+pass
+
 
 #Modify the below function such that it asks the user for a number then
 #if the number is divisible by 3 print "fizz"
@@ -47,17 +50,23 @@ def fizzBuzz(n):
         return "buzz"
     else:
         return n
+fizzBuzz(10)
+pass
+
+
 
 #modify the below function such that it asks the user for an input number.
 #if the number is even divide it by two.
 #if the number is odd multiply it by 3 and add 1
 #then print the new number.
-def collatz():
-    n = int(input("Give me a number"))
+def collatz(n):
     if(n%2==0):
         return (n/2)
     else:
         return 3*n+1
+
+collatz(8)
+pass
 
 
 
@@ -67,15 +76,14 @@ def collatz():
 #The format for temperature should end in F For Fahrenheit and C for Celcius
 #Then given the temperature if it is in Fahrenheit convert it to Celsius on vice versa
 #Example 32F -> 0C  20C -> 68F
-def convertTemperature(input):
-    input = input("Give me a temperature")
-    if(input[len(input)-1]=="C"):
-        input = int(input[0:len(input)-1])
-        out = input*(9/5)+32
-        print (str(int(out))+"F")
-    elif(input[len(input)-1]=="F"):
-        input = int(input[0:len(input)-1])
-        out = (input-32)*5/9
-        print(str(int(out))+"C")
+def convertTemperature(temp):
 
-print("fizzbuzz:", fizzBuzz(89))
+    if "C" in temp:
+        num = int(temp.replace("C",""))
+        return str(int(num*9/5 + 32)) + "F"
+    elif "F" in temp:
+        num = int(temp.replace("F",""))
+        return str(int((num - 32) * 5/9 )) + "C"
+
+print(convertTemperature("15F"))
+pass
